@@ -1,5 +1,9 @@
+//associateWith crée un dictionnaire à partir d'une liste plus succintement que la méthode associate
 
-//associateWith crée un dictionnaire plus succintement que la méthode associate
+// exemple code César avec délage 3
+// encodage a -> d, b -> e
+// décodage d -> a, e -> b
+
 val alphabet = 'a'..'z'
 fun decryptCesar(c: Char, shift: Int = 3): Char {
     val decoded = c - shift
