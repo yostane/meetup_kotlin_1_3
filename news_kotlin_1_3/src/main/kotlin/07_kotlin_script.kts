@@ -1,4 +1,5 @@
+
 val x = "Je suis un script kotlin"
-x
+println(x)
 
 println(args.joinToString(", "))

@@ -10,5 +10,13 @@ val highScores = listOf(
 
 fun main(){
 
+    val result = highScores.asSequence().
+            filter { it.score > 10_000 }
+            .sortedBy { it.name }
+            .take(3)
+            .mapIndexed { i, item -> "$i - ${item.name} a ${item.score} points" }
+            .joinToString("\n")
+
+    println(result)
 
 }

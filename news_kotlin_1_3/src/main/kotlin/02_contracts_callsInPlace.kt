@@ -1,4 +1,12 @@
-/*inline  fun executeOnce(functionToRun: () -> Unit) {
+import kotlin.contracts.ExperimentalContracts
+import kotlin.contracts.InvocationKind
+import kotlin.contracts.contract
+
+@UseExperimental(ExperimentalContracts::class)
+fun executeOnce(functionToRun: () -> Unit) {
+    contract {
+        callsInPlace(functionToRun, InvocationKind.EXACTLY_ONCE)
+    }
     functionToRun()
 }
 
@@ -13,4 +21,4 @@ fun startGame(): Int {
 fun main() {
    val lives = startGame()
     println("Thou have $lives 💖")
-}*/
+}
